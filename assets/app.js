@@ -114,7 +114,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
     if (currentTile > 4) {
-        fetch(`https://wordle-backend-r1fmdcj6e-ratracegrad.vercel.app/check/?word=${guess}`)
+        fetch(`/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {
