@@ -1,11 +1,13 @@
 const PORT = process.env.port || 8000
 const axios = require("axios").default
 const express = require("express")
-const cors = require("cors")
+// const cors = require("cors")
 require('dotenv').config()
 const app = express()
+const path = require('path')
 
-app.use(cors())
+// app.use(cors())
+app.use('/', express.static(path.resolve(__dirname, 'assets')));
 
 app.get('/word', (req, res) => {
     const options = {
