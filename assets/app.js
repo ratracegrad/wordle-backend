@@ -100,7 +100,7 @@ const addLetter = (letter) => {
         currentTile++
     }
 }
-œ
+
 const deleteLetter = () => {
     if (currentTile > 0) {
         currentTile--
