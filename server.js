@@ -30,6 +30,7 @@ app.get('/word', (req, res) => {
 
 app.get('/check', (req, res) => {
     const word = req.query.word
+    console.log('/check', word)
 
     const options = {
         method: 'GET',
