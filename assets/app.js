@@ -5,7 +5,8 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('https://wordle-backend-r1fmdcj6e-ratracegrad.vercel.app/word')
+    console.log('start getWordle')
+    fetch('/word')
         .then(response => response.json())
         .then(json => {
             wordle = json.toUpperCase()
