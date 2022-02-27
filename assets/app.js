@@ -5,10 +5,12 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('/word')
+    console.log('start getWordle')
+    fetch('https://web3-wordle.herokuapp.com/word')
         .then(response => response.json())
         .then(json => {
             wordle = json.toUpperCase()
+            console.log('word', wordle)
         })
         .catch(err => console.log(err))
 }
@@ -113,7 +115,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
     if (currentTile > 4) {
-        fetch(`/check/?word=${guess}`)
+        fetch(`https://web3-wordle.herokuapp.com/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {
